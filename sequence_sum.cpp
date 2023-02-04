@@ -21,7 +21,7 @@ int main() {
 	}
 	//two pointer
 	do{
-		sum = B[head] - B[tail];
+		sum = B[head] - B[tail]; //summary from index_tail to index_head
 		if (sum > N) {
 			tail++;
 		}
