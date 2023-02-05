@@ -20,7 +20,7 @@ int main() {
 	}
 	i = 0;
 
-	for (i; i < M / 2; i++) {
+	for (i; i < M-1; i++) {
 		for (j=i+1; j < N; j++) {
 			temp = M - A[i];
 			if ((A[j] == temp) && i != j) count++;
