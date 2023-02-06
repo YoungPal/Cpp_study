@@ -20,10 +20,10 @@ int main() {
 	}
 	i = 0;
 
-	for (i; i < M-1; i++) {
-		for (j=i+1; j < N; j++) {
-			temp = M - A[i];
-			if ((A[j] == temp) && i != j) count++;
+	for (i; i < M-1; i++) { 
+		for (j=i+1; j < N; j++) { 
+			temp = M - A[i]; //A[i] + A[x] = M
+			if ((A[j] == temp) && i != j) count++; //based Value already matched pre_value
 		}
 	}
 	cout << count;
