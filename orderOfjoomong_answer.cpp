@@ -14,7 +14,7 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		cin >> A[i];
 	}
-	sort(A.begin(), A.end());
+	sort(A.begin(), A.end()); //for using two-point must be sorted
 
 	int count = 0;
 	int i = 0;
