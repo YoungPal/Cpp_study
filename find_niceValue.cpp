@@ -15,13 +15,13 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		cin >> A[i];
 	}
-	sort(A.begin(), A.end());
+	sort(A.begin(), A.end()); //for using tow-point must be sorted
 	int Result = 0;
 
-	for (int k = 0; k < N; k++) {
+	for (int k = 1; k < N; k++) {
 		long find = A[k];
 		int i = 0;
-		int j = N - 1;
+		int j = k-1; //no necessary j=N-1, in case k=a+b always a<K & b<K
 
 		while (i < j) {
 			if (A[i] + A[j] == find) {
