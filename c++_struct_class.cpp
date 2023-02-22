@@ -83,14 +83,13 @@ void Calc(_stStudentInfo* ptr)
 
 int main() {
 	_stStudentInfo student;
-	_stStudentInfo* pStudent = &student;
 	student.Name = "JYH";
 	student.scores[eEnglish] = 90;
 	student.scores[eMath] = 95;
 	student.scores[eKorean] = 92;
 
-	Calc(pStudent);
-	display(pStudent);
+	Calc(&student);
+	display(&student);
 	
 	int input_scores[eClassMax] = { 0, };
 	char input_CQ;
@@ -99,7 +98,6 @@ int main() {
 
 	do {
 		_stStudentInfo newStudent;
-		_stStudentInfo* pnewStudent = &student;
 		
 		std::cout << "Continue : C, Quit : Q => ";
 		std::cin >> input_CQ;
@@ -111,7 +109,7 @@ int main() {
 			std::cin >> input_scores[i];
 			newStudent.scores[i] = input_scores[i];
 		}
-		Calc(pnewStudent);
+		Calc(&Student);
 		
 	} while (input_CQ != 'Q');
 
