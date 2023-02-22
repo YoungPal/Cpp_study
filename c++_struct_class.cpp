@@ -83,13 +83,14 @@ void Calc(_stStudentInfo* ptr)
 
 int main() {
 	_stStudentInfo student;
+	_stStudentInfo* pStudent = &student;
 	student.Name = "JYH";
 	student.scores[eEnglish] = 90;
 	student.scores[eMath] = 95;
 	student.scores[eKorean] = 92;
 
-	Calc(&student);
-	display(&student);
+	Calc(pStudent);
+	display(pStudent);
 	
 	int input_scores[eClassMax] = { 0, };
 	char input_CQ;
@@ -109,11 +110,22 @@ int main() {
 			std::cin >> input_scores[i];
 			newStudent.scores[i] = input_scores[i];
 		}
-		Calc(&Student);
+		Calc(&newStudent);
 		
+
+		vStudents.push_back(newStudent);
 	} while (input_CQ != 'Q');
+	
+	for (size_t i = 0; i < vStudents.size(); i++)
+	{
+		_stStudentInfo* pStudent = &vStudents[i];
+		display(pStudent);
+	}
 
-
+	if (input_CQ == 'Q')
+	{
+		vStudents.clear();
+	}
 
 	//1Â÷
 	//ÇÔ¼ö ...sum, average, min, max
